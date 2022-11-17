@@ -1,0 +1,5 @@
+C:\Users\brigh\Documents\GitHub\Cycle-Project\obj\Debug\net6.0\Cycle-Project.csproj.AssemblyReference.cache
+C:\Users\brigh\Documents\GitHub\Cycle-Project\obj\Debug\net6.0\Cycle-Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\brigh\Documents\GitHub\Cycle-Project\obj\Debug\net6.0\Cycle-Project.AssemblyInfoInputs.cache
+C:\Users\brigh\Documents\GitHub\Cycle-Project\obj\Debug\net6.0\Cycle-Project.AssemblyInfo.cs
+C:\Users\brigh\Documents\GitHub\Cycle-Project\obj\Debug\net6.0\Cycle-Project.csproj.CoreCompileInputs.cache
