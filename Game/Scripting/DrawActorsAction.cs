@@ -27,7 +27,7 @@ namespace Unit05.Game.Scripting
             Cycle player1 = (Cycle)cast.GetFirstActor("player1");
             Cycle player2 = (Cycle)cast.GetFirstActor("player2");
 
-            List<Actor> segments = cycle.GetSegments();
+            List<Actor> segments = player1.GetSegments();
             Actor score = cast.GetFirstActor("score");
             Actor food = cast.GetFirstActor("food");
             List<Actor> messages = cast.GetActors("messages");
@@ -35,7 +35,6 @@ namespace Unit05.Game.Scripting
             videoService.ClearBuffer();
             videoService.DrawActors(segments);
             videoService.DrawActor(score);
-            videoService.DrawActor(food);
             videoService.DrawActors(messages);
             videoService.FlushBuffer();
         }
