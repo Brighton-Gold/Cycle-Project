@@ -98,6 +98,5 @@ namespace Unit05.Game.Casting
                 actors[group].Remove(actor);
             }
         }
-
     }
 }
