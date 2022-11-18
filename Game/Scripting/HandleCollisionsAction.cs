@@ -45,7 +45,7 @@ namespace Unit05.Game.Scripting
             Snake snake = (Snake)cast.GetFirstActor("snake");
             Score score = (Score)cast.GetFirstActor("score");
             Food food = (Food)cast.GetFirstActor("food");
-            
+
             if (snake.GetHead().GetPosition().Equals(food.GetPosition()))
             {
                 int points = food.GetPoints();
@@ -65,11 +65,26 @@ namespace Unit05.Game.Scripting
             Actor head = snake.GetHead();
             List<Actor> body = snake.GetBody();
 
+            Snake player2 = (Snake)cast.GetFirstActor("player2");
+            Actor head2 = player2.GetHead();
+            List<Actor> body2 = player2.GetBody();
+
             foreach (Actor segment in body)
             {
-                if (segment.GetPosition().Equals(head.GetPosition()))
+                foreach (Actor segment2 in body2)
                 {
-                    isGameOver = true;
+
+                    if (segment.GetPosition().Equals(head.GetPosition())
+                    || head.GetPosition().Equals(segment2.GetPosition()))
+                    {
+                        isGameOver = true;
+                    }
+
+                    if (segment2.GetPosition().Equals(head2.GetPosition())
+                    || head2.GetPosition().Equals(segment.GetPosition()))
+                    {
+                        isGameOver = true;
+                    }
                 }
             }
         }
