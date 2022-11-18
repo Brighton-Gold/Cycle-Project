@@ -21,8 +21,8 @@ namespace Unit05
             // create the cast
             Cast cast = new Cast();
             cast.AddActor("food", new Food());
-            cast.AddActor("snake", new Snake(Constants.GREEN, Constants.MAX_X/34, Constants.MAX_Y/34));
-            cast.AddActor("player2", new Snake(Constants.RED, Constants.MAX_X/2, Constants.MAX_Y/2));
+            cast.AddActor("snake", new Snake(Constants.GREEN, Constants.MAX_X/4, Constants.MAX_Y/4));
+            cast.AddActor("player2", new Snake(Constants.RED, Constants.MAX_X/4, Constants.MAX_Y/4));
 
             cast.AddActor("score", new Score());
 
