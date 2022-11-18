@@ -43,6 +43,8 @@ namespace Unit05.Game.Scripting
         private void HandleFoodCollisions(Cast cast)
         {
             Snake snake = (Snake)cast.GetFirstActor("snake");
+            Snake player2 = (Snake)cast.GetFirstActor("player2");
+
             Score score = (Score)cast.GetFirstActor("score");
             Food food = (Food)cast.GetFirstActor("food");
 
@@ -53,6 +55,13 @@ namespace Unit05.Game.Scripting
                 score.AddPoints(points);
                 food.Reset();
             }
+            if (player2.GetHead().GetPosition().Equals(food.GetPosition()))
+            {
+                int points = food.GetPoints();
+                player2.GrowTail(points);
+                score.AddPoints(points);
+                food.Reset();
+            }        
         }
 
         /// <summary>
