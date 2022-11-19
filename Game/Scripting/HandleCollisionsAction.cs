@@ -17,6 +17,10 @@ namespace Unit05.Game.Scripting
     public class HandleCollisionsAction : Action
     {
         private bool isGameOver = false;
+        private bool player1wins = false;
+        private bool player2wins = false;
+
+
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -61,7 +65,7 @@ namespace Unit05.Game.Scripting
                 player2.GrowTail(points);
                 score.AddPoints(points);
                 food.Reset();
-            }        
+            }
         }
 
         /// <summary>
@@ -86,12 +90,16 @@ namespace Unit05.Game.Scripting
                     if (segment.GetPosition().Equals(head.GetPosition())
                     || head.GetPosition().Equals(segment2.GetPosition()))
                     {
+                        player1wins = true;
+
                         isGameOver = true;
                     }
 
                     if (segment2.GetPosition().Equals(head2.GetPosition())
                     || head2.GetPosition().Equals(segment.GetPosition()))
                     {
+                        player2wins = true;
+
                         isGameOver = true;
                     }
                 }
@@ -104,6 +112,10 @@ namespace Unit05.Game.Scripting
             {
                 Snake snake = (Snake)cast.GetFirstActor("snake");
                 List<Actor> segments = snake.GetSegments();
+
+                Snake player2 = (Snake)cast.GetFirstActor("player2");
+                List<Actor> segments2 = player2.GetSegments();
+
                 Food food = (Food)cast.GetFirstActor("food");
 
                 // create a "game over" message
@@ -117,9 +129,20 @@ namespace Unit05.Game.Scripting
                 cast.AddActor("messages", message);
 
                 // make everything white
-                foreach (Actor segment in segments)
+
+                if (player1wins == true)
                 {
-                    segment.SetColor(Constants.WHITE);
+                    foreach (Actor segment2 in segments)
+                    {
+                        segment2.SetColor(Constants.WHITE);
+                    }
+                }
+                if (player2wins == true)
+                {
+                    foreach (Actor segment in segments)
+                    {
+                        segment.SetColor(Constants.WHITE);
+                    }
                 }
                 food.SetColor(Constants.WHITE);
             }
