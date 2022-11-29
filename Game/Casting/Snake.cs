@@ -62,6 +62,7 @@ namespace Unit05.Game.Casting
                 Point position = tail.GetPosition().Add(offset);
 
                 Actor segment = new Actor();
+
                 segment.SetPosition(position);
                 segment.SetVelocity(velocity);
                 segment.SetText("#");
