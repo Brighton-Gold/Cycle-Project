@@ -57,12 +57,13 @@ namespace Unit05.Game.Casting
             for (int i = 0; i < numberOfSegments; i++)
             {
                 Actor tail = segments.Last<Actor>();
+                Actor color = segments.SetColor();
                 Point velocity = tail.GetVelocity();
                 Point offset = velocity.Reverse();
                 Point position = tail.GetPosition().Add(offset);
 
                 Actor segment = new Actor();
-
+                segment.SetColor(color);
                 segment.SetPosition(position);
                 segment.SetVelocity(velocity);
                 segment.SetText("#");

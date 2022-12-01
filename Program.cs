@@ -20,7 +20,7 @@ namespace Unit05
         {
             // create the cast
             Cast cast = new Cast();
-            cast.AddActor("food1", new Food());
+            cast.AddActor("food", new Food());
 
 
             cast.AddActor("snake", new Snake(Constants.GREEN, Constants.MAX_X/2, Constants.MAX_Y/2));
@@ -30,7 +30,7 @@ namespace Unit05
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
-            VideoService videoService = new VideoService(true);
+            VideoService videoService = new VideoService(false);
            
             // create the script
             Script script = new Script();
