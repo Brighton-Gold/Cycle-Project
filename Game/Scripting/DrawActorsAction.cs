@@ -32,6 +32,8 @@ namespace Unit05.Game.Scripting
 
             Actor score = cast.GetFirstActor("score");
             Actor food = cast.GetFirstActor("food");
+            Actor food2 = cast.GetFirstActor("food2");
+
             List<Actor> messages = cast.GetActors("messages");
             
             videoService.ClearBuffer();
@@ -40,6 +42,8 @@ namespace Unit05.Game.Scripting
 
             videoService.DrawActor(score);
             videoService.DrawActor(food);
+            videoService.DrawActor(food2);
+
             videoService.DrawActors(messages);
             videoService.FlushBuffer();
         }
