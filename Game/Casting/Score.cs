@@ -41,7 +41,7 @@ namespace Unit05.Game.Casting
 
         private void Generate_Score()
         {
-            SetText($"Player 1: {this.points} Player 2: {this.points2}");
+            SetText($"           Player 1: {this.points}             Player 2: {this.points2}");
         }
     }
 }

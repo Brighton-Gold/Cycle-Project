@@ -109,7 +109,7 @@ namespace Unit05.Game.Scripting
                     if (segment.GetPosition().Equals(head.GetPosition())
                     || head.GetPosition().Equals(segment2.GetPosition()))
                     {
-                        player1wins = true;
+                        player2wins = true;
 
                         isGameOver = true;
                     }
@@ -117,7 +117,7 @@ namespace Unit05.Game.Scripting
                     if (segment2.GetPosition().Equals(head2.GetPosition())
                     || head2.GetPosition().Equals(segment.GetPosition()))
                     {
-                        player2wins = true;
+                        player1wins = true;
 
                         isGameOver = true;
                     }
@@ -136,6 +136,8 @@ namespace Unit05.Game.Scripting
                 List<Actor> segments2 = player2.GetSegments();
 
                 Food food = (Food)cast.GetFirstActor("food");
+                Food food2 = (Food)cast.GetFirstActor("food2");
+
 
                 // create a "game over" message
                 int x = Constants.MAX_X / 2;
@@ -151,9 +153,9 @@ namespace Unit05.Game.Scripting
 
                 if (player1wins == true)
                 {
-                    foreach (Actor segment2 in segments)
+                    foreach (Actor segment in segments2)
                     {
-                        segment2.SetColor(Constants.WHITE);
+                        segment.SetColor(Constants.WHITE);
                     }
                 }
                 if (player2wins == true)
@@ -164,6 +166,8 @@ namespace Unit05.Game.Scripting
                     }
                 }
                 food.SetColor(Constants.WHITE);
+                food2.SetColor(Constants.WHITE);
+
             }
         }
 
