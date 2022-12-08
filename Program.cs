@@ -22,6 +22,7 @@ namespace Unit05
             Cast cast = new Cast();
             cast.AddActor("food", new Food());
             cast.AddActor("food2", new Food());
+            cast.AddActor("powerup", new Powerup());
 
 
 

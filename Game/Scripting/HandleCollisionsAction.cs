@@ -52,6 +52,7 @@ namespace Unit05.Game.Scripting
             Score score = (Score)cast.GetFirstActor("score");
             Food food = (Food)cast.GetFirstActor("food");
             Food food2 = (Food)cast.GetFirstActor("food2");
+            Powerup powerup = (Powerup)cast.GetFirstActor("powerup");
 
 
             if (snake.GetHead().GetPosition().Equals(food.GetPosition()))
@@ -61,7 +62,7 @@ namespace Unit05.Game.Scripting
                 score.AddPoints(points);
                 food.Reset();
             }
-            
+
             if (snake.GetHead().GetPosition().Equals(food2.GetPosition()))
             {
                 int points = food.GetPoints();
@@ -84,6 +85,16 @@ namespace Unit05.Game.Scripting
                 player2.GrowTail(points);
                 score.AddPointsPlayer2(points);
                 food2.Reset();
+            }
+
+            if (player2.GetHead().GetPosition().Equals(powerup.GetPosition()))
+            {
+                powerup.Reset();
+
+            }
+            if (snake.GetHead().GetPosition().Equals(powerup.GetPosition()))
+            {
+                powerup.Reset();
             }
         }
 

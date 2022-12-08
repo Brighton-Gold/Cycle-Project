@@ -12,5 +12,7 @@ namespace Unit05.Game.Casting
             SetColor(Constants.WHITE);
             Reset();
         }
+
+        
     }
 }
