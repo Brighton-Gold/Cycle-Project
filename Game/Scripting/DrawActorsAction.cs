@@ -31,6 +31,7 @@ namespace Unit05.Game.Scripting
             List<Actor> segments2 = snake2.GetSegments();
 
             Actor score = cast.GetFirstActor("score");
+            
             Actor food = cast.GetFirstActor("food");
             Actor food2 = cast.GetFirstActor("food2");
 

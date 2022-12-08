@@ -18,8 +18,8 @@ namespace Unit05.Game.Casting
         /// </summary>
         public Food()
         {
-            SetText("🍛");
-            // SetColor(Constants.ORANGE); 
+            SetText("À");
+            SetColor(Constants.ORANGE); 
             Reset();
         }
 
@@ -29,16 +29,17 @@ namespace Unit05.Game.Casting
         /// <returns>The points.</returns>
         public int GetPoints()
         {
+            points = 2;
+
             return points;
         }
 
         /// <summary>
-        /// Selects a random position and points that the food is worth.
+        /// Selects a random position 
         /// </summary>
         public void Reset()
         {
             Random random = new Random();
-            points = 2;
             int x = random.Next(Constants.COLUMNS);
             int y = random.Next(Constants.ROWS);
             Point position = new Point(x, y);
